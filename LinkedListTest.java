@@ -25,6 +25,12 @@ public class LinkedListTest {
         list.remove(3);
         list.printList();
     }
+    @Test
+    public void testEmptyList() {
+        LinkedList list = new LinkedList();
+        assertTrue(list.isEmpty());
+        assertEquals(0, list.size());
+    }
 
     @Test
     public void testContains() {

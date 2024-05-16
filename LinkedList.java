@@ -1,6 +1,7 @@
 
 public class LinkedList {
     ListNode head;
+    int size;
 
     public void add(int val) {
         ListNode newNode = new ListNode(val);
@@ -13,6 +14,15 @@ public class LinkedList {
             }
             current.next = newNode;
         }
+        size++; // Increment size when adding a new element
+    }
+
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    public int size() {
+        return size;
     }
 
     public void remove(int val) {
@@ -22,6 +32,7 @@ public class LinkedList {
 
         if (head.val == val) {
             head = head.next;
+            size--; // Decrement size when removing an element
             return;
         }
 
@@ -30,6 +41,7 @@ public class LinkedList {
         while (current != null) {
             if (current.val == val) {
                 prev.next = current.next;
+                size--; // Decrement size when removing an element
                 return;
             }
             prev = current;
